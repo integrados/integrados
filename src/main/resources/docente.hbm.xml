@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping.dtd">
+
+<hibernate-mapping>
+  <class name="org.integrados.data.usuarios.Docente" table="docente" catalog="integrados_db" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer" column="id">
+           <generator class="identity" />
+        </id>
+        <many-to-one name="domicilio" class="org.integrados.data.usuarios.Domicilio" fetch="join">
+           <column name="id_Domicilio" />
+        </many-to-one>
+        <property name="usuario" type="string" column="usuario" length="45"/>
+        <property name="clave" type="string" column="password" length="45" not-null="false" />
+        
+        <property name="nombre" type="string" column="nombre" length="45" not-null="true" />
+        <property name="apellido" type="string" column="apellido" length="45" not-null="true" />
+        <property name="dni" type="int" column="dni" not-null="true" unique="true" />
+        <property name="telefono" type="java.lang.Integer" column="telefono" />
+        <property name="mail" type="string" column="mail" length="45" />
+        <!--<set name="docentesInstitucions" table="docentes_institucion" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="id_Docente" not-null="true" />
+            </key>
+            <one-to-many class="org.integrados.data.usuarios.DocentesInstitucion" />
+        </set>
+        <set name="actividads" table="actividad" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="id_Docente" not-null="true" />
+            </key>
+            <one-to-many class="org.integrados.data.usuarios.Actividad" />
+        </set>
+        <set name="institucions" table="institucion" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="id_Docente" not-null="true" />
+            </key>
+            <one-to-many class="org.integrados.data.usuarios.Institucion" />
+        </set>
+        <set name="registroActividads" table="registro_actividad" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="id_Docente" not-null="true" />
+            </key>
+            <one-to-many class="org.integrados.data.usuarios.RegistroActividad" />
+        </set>
+        <set name="actividadesDocentes" table="actividades_docente" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="id_Docente" not-null="true" />
+            </key>
+            <one-to-many class="org.integrados.data.usuarios.ActividadesDocente" />
+        </set>
+        <set name="alumnosDocentes" table="alumnos_docente" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="id_Docente" not-null="true" />
+            </key>
+            <one-to-many class="org.integrados.data.usuarios.AlumnosDocente" />
+        </set>  -->
+  </class>
+</hibernate-mapping>
