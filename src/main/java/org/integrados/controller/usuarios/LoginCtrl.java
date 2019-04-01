@@ -22,7 +22,7 @@ import org.integrados.view.LoginDlg;
  */
 public class LoginCtrl {
     
-    private Aplicacion app;
+    public static Aplicacion app;
     private Persona persona;
     private LoginDlg loginDlg;
 
@@ -35,6 +35,14 @@ public class LoginCtrl {
     public void login() {
         this.loginDlg = new LoginDlg(this);
         this.loginDlg.mostrar();
+    }
+
+    public Aplicacion getApp() {
+        return app;
+    }
+
+    public Persona getPersona() {
+        return persona;
     }
 
     public void validar(String usuario, String clave) throws IntegradosException {

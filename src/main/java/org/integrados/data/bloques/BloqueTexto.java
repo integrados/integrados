@@ -33,12 +33,13 @@ public class BloqueTexto extends Bloque {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        BloqueTexto bt = (BloqueTexto) obj;
+        return bt.getTexto().equalsIgnoreCase(this.getTexto());
     }
     
     @Override
     public String toString() {
-        return super.toString()+"\n" + "BloqueTexto{" + "texto=" + texto + '}';
+        return super.toString()+" " + "BloqueTexto{" + "texto=" + texto + "}";
     }
 
 }

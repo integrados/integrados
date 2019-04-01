@@ -27,6 +27,7 @@ public class RegistroActividad {
     public RegistroActividad() {
         this.id = null;
         this.respuestaAlumno= new ArrayList<>();
+        this.finalizoCorrectamente=false;
     }
 
     public RegistroActividad(Actividad actividad, Alumno alumno, Docente docente) {
